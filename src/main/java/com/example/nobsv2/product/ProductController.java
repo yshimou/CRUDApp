@@ -15,6 +15,15 @@ public class ProductController {
   @Autowired
   private CreateProductService createProductService;
 
+  @Autowired
+  private GetProductService getProductService;
+
+  @Autowired
+  private UpdateProductService updateProductService;
+
+  @Autowired
+  private DeleteProductService deleteProductService;
+
   @PostMapping
   public ResponseEntity<String> createProduct() {
     return createProductService.execute();
