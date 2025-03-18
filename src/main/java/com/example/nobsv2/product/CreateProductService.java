@@ -5,9 +5,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CreateProductService {
+public class CreateProductService implements Command<Void, String> {
 
-  public ResponseEntity<String> execute() {
+  @Override
+  public ResponseEntity<String> execute(Void input) {
     return ResponseEntity.status(HttpStatus.CREATED).body("Product created");
   }
 }
